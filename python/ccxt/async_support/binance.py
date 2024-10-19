@@ -4237,6 +4237,11 @@ class binance(Exchange, ImplicitAPI):
             self.safe_number_2(ohlcv, 3, 'low'),
             self.safe_number_2(ohlcv, 4, 'close'),
             self.safe_number_2(ohlcv, volumeIndex, 'volume'),
+            self.safe_number_2(ohlcv, 7, 'amount'),
+            self.safe_number_2(ohlcv, 8, 'num_trades'),
+            self.safe_number_2(ohlcv, 9, 'taker_buy_volume'),
+            self.safe_number_2(ohlcv, 10, 'taker_buy_amount')
+
         ]
 
     async def fetch_ohlcv(self, symbol: str, timeframe='1m', since: Int = None, limit: Int = None, params={}) -> List[list]:
